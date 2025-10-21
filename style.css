@@ -170,9 +170,20 @@ body.loaded .placeholder {
 /* =============== RESPONSIVE BREAKPOINTS =============== */
 @media (max-width: 768px) {
   body {
-    overflow-x: hidden;
+     margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* prevent scrolling */
   }
 
+    .container {
+    padding-bottom: 20vh; /* reduce bottom space */
+   /* margin-bottom: 0;      remove any extra margin */
+    /*min-height: auto;      prevent stretching */
+    display: flex;
+    flex-direction: column;
+   justify-content: flex-start; /* optional: keeps top+middle sections from pushing footer down */
+  }
   /* Header text adjustments */
   header {
     margin-top: 6vh;
@@ -197,8 +208,8 @@ body.loaded .placeholder {
   /* Footer adjustments */
   .footer {
       left: 10%;
-    top: 50%;
-    margin-top: none;
+    bottom: 20%;
+    /*margin-top: none;
     padding-bottom: none;
     transform: none; /* remove desktop left shift */
   }
@@ -236,27 +247,27 @@ body.loaded .placeholder {
 
 
   .small-top-circle {
-      right: 45%;
-    top: 25%;
+      right: 70%;
+    top: 5%;
   }
 
   .second-small-top-circle {
-    width: 23vw;
-    height: 23vw;
+    width: 20vw;
+    height: 20vw;
     opacity: 0.5;
-      right: 25%;
-    top: 32%;
+      right: 50%;
+    top: 2%;
   }
 
 
   .circle-small {
-      right: 50%;
-    top: 60%;
+      left: 62%;
+    top: 22%;
   }
 
   .pink-circle-small {
       left: 75%;
-    top: 45%;
+    top: 35%;
   }
 
   .main-circle {
@@ -265,7 +276,7 @@ body.loaded .placeholder {
 
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
   }
 
@@ -279,6 +290,6 @@ body.loaded .placeholder {
     height: 45vw;
     z-index: 2; /* on top of main-circle */
 left: 30%;
-    top: 40%;
+    top: 30%;
   }
 }
