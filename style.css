@@ -1,0 +1,284 @@
+/* =============== BASE STYLES =============== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E1EACD;
+  color: #01352C;
+  font-family: 'Lalezar', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+
+/* =============== TEXT AREA =============== */
+header {
+  position: relative;
+  z-index: 3;
+  padding-left: 5vw;
+  margin-top: 10vh;
+}
+
+.intro {
+  font-family: 'Lalezar', cursive;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.gee {
+  font-family: 'Leckerli One', cursive;
+  font-size: clamp(4rem, 12vw, 10.5rem);
+}
+
+.subtitle {
+  font-family: 'Lalezar', cursive;
+  font-size: clamp(1.2rem, 3vw, 2.9rem);
+  margin-top: 0.5rem;
+  line-height: 1.1;
+}
+
+/* =============== FOOTER =============== */
+.footer {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin-top: 4vh;
+  margin-right: 14vh;
+  padding-bottom: 6vh;
+/*   transform: translateX(-3vw); /* shift left by 3% of viewport width */
+}
+
+.coming-soon {
+  font-family: 'Leckerli One', cursive;
+  font-size: clamp(1.8rem, 4vw, 4.5rem);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.connect {
+  font-family: 'Lalezar', cursive;
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -10px;
+}
+
+.linkedin img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.linkedin:hover img {
+  transform: scale(1.2);
+}
+
+/* =============== CIRCLES & IMAGE =============== */
+.circle-small,
+.pink-circle-small,
+.small-top-circle,
+.second-small-top-circle,
+.main-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-small {
+  bottom: 15%;
+  left: 10%;
+  width: 18vw;
+  height: 18vw;
+  background-color: rgba(1, 53, 44, 0.1);
+  z-index: 1;
+}
+
+.pink-circle-small {
+  bottom: 25%;
+  left: 28.25%;
+  width: 10vw;
+  height: 10vw;
+  background-color: rgba(246, 176, 255, 0.171);
+  z-index: 1;
+}
+
+.small-top-circle {
+  top: 3%;
+  right: 35%;
+  width: 18vw;
+  height: 18vw;
+  background-color: rgba(1, 53, 44, 0.1);
+  z-index: 1;
+}
+
+.second-small-top-circle {
+  top: 1.3%;
+  right: 25.8%;
+  width: 10vw;
+  height: 10vw;
+  background-color: rgba(1, 53, 44, 0.1);
+  z-index: 1;
+}
+
+.main-circle {
+  bottom: 5%;
+  right: 5%;
+  width: 35vw;
+  height: 35vw;
+  background-color: rgba(1, 53, 44, 0.5);
+  z-index: 2;
+}
+
+.placeholder {
+  position: absolute;
+  bottom: 5%;
+  right: 12%;
+  width: 25vw;
+  height: auto;
+  max-width: 390px;
+  z-index: 3;
+  opacity: 0.9;
+}
+
+/* =============== ANIMATION =============== */
+header,
+footer,
+.circle,
+.placeholder {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+body.loaded header,
+body.loaded footer,
+body.loaded .circle,
+body.loaded .placeholder {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============== RESPONSIVE BREAKPOINTS =============== */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Header text adjustments */
+  header {
+    margin-top: 6vh;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .intro {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+
+  .gee {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.6rem);
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+
+  /* Footer adjustments */
+  .footer {
+      left: 10%;
+    top: 50%;
+    margin-top: none;
+    padding-bottom: none;
+    transform: none; /* remove desktop left shift */
+  }
+
+  .coming-soon {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .connect {
+   /* flex-direction: column;*/
+    gap: 8px;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    align-items: center;
+  justify-content: center;
+  }
+
+  .linkedin img {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
+}
+
+.linkedin:hover img {
+  transform: scale(1.2);
+}
+
+  /* Circle & image resizing + centered overlapping placeholder */
+  .circle-small,
+  .pink-circle-small,
+  .small-top-circle {
+    width: 25vw;
+    height: 25vw;
+    opacity: 0.5;
+  }
+
+
+  .small-top-circle {
+      right: 45%;
+    top: 25%;
+  }
+
+  .second-small-top-circle {
+    width: 23vw;
+    height: 23vw;
+    opacity: 0.5;
+      right: 25%;
+    top: 32%;
+  }
+
+
+  .circle-small {
+      right: 50%;
+    top: 60%;
+  }
+
+  .pink-circle-small {
+      left: 75%;
+    top: 45%;
+  }
+
+  .main-circle {
+    width: 45vw;
+    height: 45vw;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Ensure stacking order */
+  .main-circle {
+    z-index: 1; /* behind placeholder */
+  }
+
+  .placeholder {
+     width: 45vw;
+    height: 45vw;
+    z-index: 2; /* on top of main-circle */
+left: 30%;
+    top: 40%;
+  }
+}
